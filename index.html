@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100a06">
+  <meta name="description" content="The Best 2026 — школьная премия. Поддерживай людей своим голосом.">
+  <title>The Best 2026 — школьная премия</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-noise" aria-hidden="true"></div>
+  <header class="header" id="top">
+    <a class="logo" href="#top" aria-label="The Best — на главную">THE BEST<span>.</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav class="nav" id="mainNav">
+      <a href="#about">О премии</a>
+      <a href="#nominations">Номинации</a>
+      <a href="#how">Как голосовать</a>
+      <a href="#faq">Вопрос-ответ</a>
+    </nav>
+    <a class="telegram-link" href="https://t.me/ADMIN_USERNAME" target="_blank" rel="noopener" aria-label="Telegram администратора">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 4.2 18.3 20c-.25 1.12-.9 1.4-1.82.87l-5.03-3.7-2.43 2.34c-.27.27-.5.5-1.03.5l.36-5.12 9.32-8.42c.4-.36-.09-.56-.62-.2L5.53 13.6.56 12.05c-1.08-.34-1.1-1.08.23-1.6L20.2 2.9c.9-.33 1.7.22 1.4 1.3Z"/></svg>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="The Best 2026">
+      <div class="hero-image">
+        <canvas class="embers" id="embers" aria-hidden="true"></canvas>
+        <div class="hero-image-overlay"></div>
+        <div class="hero-image-label"><span class="live-dot"></span> THE BEST AWARDS · 2026</div>
+        <div class="hero-copy">
+          <p class="eyebrow">ТВОЁ ВРЕМЯ БЫТЬ ЗАМЕЧЕННЫМ</p>
+          <h1>THE BEST<br><span>2026</span></h1>
+          <p class="hero-description">Премия, в которой каждый голос имеет значение.</p>
+          <a class="round-link" href="#nominations">СМОТРЕТЬ НОМИНАЦИИ <span>↘</span></a>
+        </div>
+        <div class="hero-side-note">ОТМЕЧАЕМ ТЕХ, КТО ДЕЛАЕТ НАШУ ШКОЛУ ОСОБЕННОЙ</div>
+        <div class="hero-bottom">
+          <span>ОФИЦИАЛЬНАЯ ПРЕМИЯ</span>
+          <span>ИТОГИ: <b id="resultsDateLabel">ДАТА БУДЕТ ДОБАВЛЕНА</b></span>
+        </div>
+      </div>
+      <div class="hero-index"><span>01</span><span class="index-line"></span><span>05</span></div>
+    </section>
+
+    <section class="status-strip" aria-label="Статус голосования">
+      <div class="status-cell status-main">
+        <span class="status-label" id="countdownLabel">ДО ОБЪЯВЛЕНИЯ ИТОГОВ</span>
+        <div class="countdown" id="countdown" role="timer" aria-live="off">
+          <div><b data-unit="days">--</b><small>ДНЕЙ</small></div>
+          <div><b data-unit="hours">--</b><small>ЧАСОВ</small></div>
+          <div><b data-unit="minutes">--</b><small>МИНУТ</small></div>
+          <div><b data-unit="seconds">--</b><small>СЕКУНД</small></div>
+        </div>
+      </div>
+      <div class="status-cell"><b class="status-num" id="statNominations">0</b><span class="status-label">НОМИНАЦИЙ</span></div>
+      <div class="status-cell"><b class="status-num" id="statNominees">0</b><span class="status-label">НОМИНАНТОВ</span></div>
+    </section>
+
+    <section class="intro section-wrap" id="about">
+      <div class="section-kicker"><span>01 / О ПРЕМИИ</span><span>THE BEST 2026</span></div>
+      <div class="intro-grid">
+        <div class="founder-photo image-placeholder">
+          <span class="placeholder-cross">+</span><span>ФОТО ОСНОВАТЕЛЯ</span>
+          <small>founder.jpg</small>
+        </div>
+        <div class="intro-text">
+          <p class="eyebrow">ЭТО БОЛЬШЕ, ЧЕМ ПРОСТО НОМИНАЦИИ</p>
+          <h2>У КАЖДОГО<br>ЕСТЬ СВОЯ<br><em>ИСТОРИЯ.</em></h2>
+          <p>THE BEST — это возможность отметить людей, которые делают школьную жизнь ярче. Здесь важны эмоции, поддержка и твой выбор.</p>
+          <p class="intro-quote">«Поддерживай людей своим голосом. Итог решаешь именно ты!»</p>
+          <span class="founder-caption">ИДЕЯ И СОЗДАНИЕ ПРЕМИИ — THE BEST TEAM</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="nominations section-wrap" id="nominations">
+      <div class="section-kicker"><span>02 / НОМИНАЦИИ</span><span>ВЫБИРАЙ СВОИХ</span></div>
+      <div class="section-heading">
+        <div><p class="eyebrow">THE MOMENT OF CHOICE</p><h2>ГЛАВНЫЕ<br><em>НОМИНАЦИИ.</em></h2></div>
+        <p>Два главных титула премии The Best 2026. Выбирай того, кто, по твоему мнению, достоин победы.</p>
+      </div>
+
+      <div class="featured-nominations" id="featuredNominations">
+        <article class="nomination-card king-card">
+          <div class="nomination-art king-art"><img src="./img/KingLogo.png" alt="Корона номинации The Best King" decoding="async" onload="this.parentNode.classList.add('has-image')" onerror="this.remove()"><div class="nomination-image-placeholder"><span>01 / THE BEST</span><strong>KING</strong><small>ЗДЕСЬ БУДЕТ ИЗОБРАЖЕНИЕ НОМИНАЦИИ</small></div></div>
+          <div class="nomination-info"><div><span class="category-label">ГЛАВНАЯ МУЖСКАЯ НОМИНАЦИЯ</span><h3>THE BEST KING</h3></div><button class="vote-open" data-nomination="king">ПРОГОЛОСОВАТЬ <span>↗</span></button></div>
+        </article>
+        <article class="nomination-card queen-card">
+          <div class="nomination-art queen-art"><img src="./img/QueenLogo.png" alt="Корона номинации The Best Queen" decoding="async" onload="this.parentNode.classList.add('has-image')" onerror="this.remove()"><div class="nomination-image-placeholder"><span>02 / THE BEST</span><strong>QUEEN</strong><small>ЗДЕСЬ БУДЕТ ИЗОБРАЖЕНИЕ НОМИНАЦИИ</small></div></div>
+          <div class="nomination-info"><div><span class="category-label">ГЛАВНАЯ ЖЕНСКАЯ НОМИНАЦИЯ</span><h3>THE BEST QUEEN</h3></div><button class="vote-open" data-nomination="queen">ПРОГОЛОСОВАТЬ <span>↗</span></button></div>
+        </article>
+      </div>
+
+      <div class="other-heading">
+        <span>ДОПОЛНИТЕЛЬНЫЕ НОМИНАЦИИ</span>
+        <span>03 — ∞</span>
+      </div>
+      <p class="mini-intro">У каждой категории — свой победитель. Выбирай номинанта и поддерживай его своим голосом.</p>
+      <div class="other-nominations" id="otherNominations" aria-live="polite"></div>
+    </section>
+
+    <section class="steps section-wrap" id="how">
+      <div class="section-kicker"><span>03 / КАК ГОЛОСОВАТЬ</span><span>3 ШАГА</span></div>
+      <div class="steps-grid">
+        <article class="step reveal"><span class="step-num">01</span><h3>ВЫБЕРИ НОМИНАЦИЮ</h3><p>Открой King, Queen или любую из дополнительных категорий.</p></article>
+        <article class="step reveal"><span class="step-num">02</span><h3>НАЙДИ СВОЕГО</h3><p>Посмотри список номинантов и выбери того, кому хочешь отдать голос.</p></article>
+        <article class="step reveal"><span class="step-num">03</span><h3>ОТДАЙ ГОЛОС</h3><p>Нажми «Выбрать» и подтверди свой выбор на странице голосования.</p></article>
+      </div>
+    </section>
+
+    <section class="manifesto">
+      <div class="manifesto-bg">BEST</div>
+      <p class="eyebrow">ТВОЙ ГОЛОС ИМЕЕТ ЗНАЧЕНИЕ</p>
+      <h2>НЕ ПРОСТО<br>УЧАСТВУЙ.<br><em>ВЛИЯЙ.</em></h2>
+      <p>Каждый голос — это поддержка. Каждая номинация — своя история.</p>
+      <a href="#nominations" class="manifesto-link">ВЫБРАТЬ СВОЕГО ПОБЕДИТЕЛЯ <span>↗</span></a>
+    </section>
+
+    <section class="faq section-wrap" id="faq">
+      <div class="section-kicker"><span>04 / ВОПРОС-ОТВЕТ</span><span>FAQ</span></div>
+      <div class="faq-layout"><div><p class="eyebrow">ЕСТЬ ВОПРОСЫ?</p><h2>МЫ<br><em>ОТВЕТИМ.</em></h2></div>
+        <div class="faq-list">
+          <details><summary>Что такое The Best 2026?<span>+</span></summary><p>Это школьная премия, в которой участники могут поддержать номинантов и выбрать победителей в разных категориях.</p></details>
+          <details><summary>Как проголосовать?<span>+</span></summary><p>Открой нужную номинацию, выбери участника и нажми кнопку голосования. Дальнейшие правила будут указаны на странице голосования.</p></details>
+          <details><summary>Когда будут известны результаты?<span>+</span></summary><p>Дата итогов будет опубликована организаторами на этом сайте.</p></details>
+          <details><summary>К кому обратиться с вопросом?<span>+</span></summary><p>Напиши организаторам через Telegram — ссылка находится в верхней части сайта.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top"><p class="eyebrow">THE BEST AWARDS · 2026</p><h2>THE BEST<span>.</span></h2><p>ПОДПИСЫВАЙСЯ И СЛЕДИ<br>ЗА НОВОСТЯМИ.</p></div>
+    <div class="footer-bottom"><span>© THE BEST 2026</span><span>СОЗДАНО ДЛЯ ТЕХ, КТО ДОСТОИН БЫТЬ ЛУЧШИМ</span><a href="https://t.me/ADMIN_USERNAME" target="_blank" rel="noopener">TELEGRAM ↗</a></div>
+  </footer>
+
+  <div class="modal" id="voteModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+      <button class="modal-close" id="modalClose" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+      <header class="nomination-modal-head">
+        <div class="nomination-modal-copy">
+          <div class="modal-brand">THE <strong>BEST</strong> AWARDS · 2026</div>
+          <h2 id="modalTitle">THE BEST KING</h2>
+          <p class="modal-subtitle" id="modalDescription">Выбери участника, которого хочешь поддержать.</p>
+          <a class="suggest-nominee" href="https://t.me/ADMIN_USERNAME" target="_blank" rel="noopener">ПРЕДЛОЖИТЬ ДРУГОГО <span>↗</span></a>
+        </div>
+        <div class="modal-art" id="modalArt" aria-hidden="true">
+          <img id="modalArtImg" alt="" hidden>
+          <span id="modalArtMark" hidden></span>
+        </div>
+      </header>
+      <div class="nominee-scroll" id="nomineeScroll" tabindex="-1">
+        <div class="nominee-list" id="nomineeList"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
